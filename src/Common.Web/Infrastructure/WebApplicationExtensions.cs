@@ -15,11 +15,9 @@ public static class WebApplicationExtensions
             .WithOpenApi();
     }
 
-    public static WebApplication MapEndpoints(this WebApplication app)
+    public static WebApplication MapEndpoints(this WebApplication app, Assembly assembly)
     {
         var endpointGroupType = typeof(EndpointGroupBase);
-
-        var assembly = Assembly.GetExecutingAssembly();
 
         var endpointGroupTypes = assembly.GetExportedTypes()
             .Where(t => t.IsSubclassOf(endpointGroupType));

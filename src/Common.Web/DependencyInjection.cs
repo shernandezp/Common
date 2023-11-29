@@ -18,10 +18,6 @@ public static class DependencyInjection
 
         services.AddHttpContextAccessor();
 
-        services.AddHealthChecks();
-        /*services.AddHealthChecks()
-            .AddDbContextCheck<ApplicationDbContext>();*/
-
         services.AddExceptionHandler<CustomExceptionHandler>();
 
         services.AddRazorPages();
