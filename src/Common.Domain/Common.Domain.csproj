@@ -1,5 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <PropertyGroup>
+    <PackageId>Common.Domain</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>Sergio Hernandez</Authors>
+    <Company>TBD</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>Common.Domain</RootNamespace>
     <AssemblyName>Common.Domain</AssemblyName>
