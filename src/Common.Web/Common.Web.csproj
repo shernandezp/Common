@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" />
+    <PackageReference Include="NSwag.AspNetCore" />
+    <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="ZymLabs.NSwag.FluentValidation.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Application\Common.Application.csproj" />
+    <ProjectReference Include="..\Common.Infrastructure\Common.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
