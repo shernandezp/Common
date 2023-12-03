@@ -1,0 +1,10 @@
+﻿namespace Common.Domain.Constants;
+
+public static class TableMetadata
+{
+    public const string User = "users";
+    public const string Role = "roles";
+    public const string Profile = "profiles";
+    public const string UserRole = "user_role";
+    public const string UserProfile = "user_profile";
+}
