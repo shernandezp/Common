@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Common.Domain</PackageId>
-    <Version>0.0.3</Version>
+    <Version>0.0.5</Version>
     <Authors>Sergio Hernandez</Authors>
     <Company>TBD</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

@@ -2,6 +2,7 @@
 
 public static class TableMetadata
 {
+    public const string Account = "accounts";
     public const string User = "users";
     public const string Role = "roles";
     public const string Profile = "profiles";
