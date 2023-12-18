@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Common.Domain</PackageId>
-    <Version>0.0.5</Version>
+    <Version>0.0.8</Version>
     <Authors>Sergio Hernandez</Authors>
     <Company>TBD</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -12,7 +12,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" />
     <PackageReference Include="MediatR" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
