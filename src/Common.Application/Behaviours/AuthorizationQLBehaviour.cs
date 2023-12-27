@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Common.Application.Exceptions;
 using Common.Application.Interfaces;
+using Common.Application.Security;
 
 namespace Common.Application.Behaviours;
 
