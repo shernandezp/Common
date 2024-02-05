@@ -18,7 +18,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Domain", "src\Common
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Infrastructure", "src\Common.Infrastructure\Common.Infrastructure.csproj", "{26906F94-DA9B-4607-9114-E293F1F2A084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Web", "src\Common.Web\Common.Web.csproj", "{5E30212B-0FDA-41DD-B3C7-7068B0683DDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Web", "src\Common.Web\Common.Web.csproj", "{5E30212B-0FDA-41DD-B3C7-7068B0683DDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
