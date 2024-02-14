@@ -1,16 +1,10 @@
-﻿using Common.Application.Models;
-
-namespace Common.Application.Interfaces;
+﻿namespace Common.Application.Interfaces;
 
 public interface IIdentityService
 {
-    string? GetUserNameAsync(string userId);
+    Task<string?> GetUserNameAsync(Guid userId, CancellationToken token);
 
-    bool IsInRoleAsync(string role);
+    Task<bool> IsInRoleAsync(Guid userId, string role, CancellationToken token);
 
-    bool AuthorizeAsync(string policyName);
-
-    Task<(Result Result, string UserId)> CreateUserAsync(string userName, string password);
-
-    Task<Result> DeleteUserAsync(string userId);
+    Task<bool> AuthorizeAsync(Guid userId, string policyName, CancellationToken token);
 }

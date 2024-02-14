@@ -35,7 +35,7 @@ public class AuthorizationQLBehaviour<TRequest, TResponse>(
                     {
                         foreach (var role in roles)
                         {
-                            var isInRole = identityService.IsInRoleAsync(role.Trim());
+                            var isInRole = await identityService.IsInRoleAsync(new Guid(user.Id), role.Trim(), cancellationToken);
                             if (isInRole)
                             {
                                 authorized = true;
@@ -60,7 +60,7 @@ public class AuthorizationQLBehaviour<TRequest, TResponse>(
                 {
                     if (policy != null)
                     {
-                        var authorized = identityService.AuthorizeAsync(policy);
+                        var authorized = await identityService.AuthorizeAsync(new Guid(user.Id), policy, cancellationToken);
 
                         if (!authorized)
                         {

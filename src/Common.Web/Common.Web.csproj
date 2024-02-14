@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Common.Web</PackageId>
-    <Version>0.0.2</Version>
+    <Version>0.0.7</Version>
     <Authors>Sergio Hernandez</Authors>
     <Company>TBD</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

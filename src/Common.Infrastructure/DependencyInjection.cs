@@ -1,7 +1,5 @@
-﻿using Common.Application.Interfaces;
-using Common.Domain.Constants;
+﻿using Common.Domain.Constants;
 using Common.Infrastructure.Interceptors;
-using Common.Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -26,7 +24,6 @@ public static class DependencyInjection
             });
 
         services.AddSingleton(TimeProvider.System);
-        services.AddTransient<IIdentityService, IdentityService>();
 
         services.AddAuthorizationBuilder()
             .AddPolicy(Policies.CanPurge, policy => policy.RequireRole(Roles.Administrator));

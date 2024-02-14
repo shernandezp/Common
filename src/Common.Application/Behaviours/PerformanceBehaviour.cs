@@ -29,7 +29,7 @@ public class PerformanceBehaviour<TRequest, TResponse>(
 
             if (!string.IsNullOrEmpty(userId))
             {
-                userName = identityService.GetUserNameAsync(userId);
+                userName = await identityService.GetUserNameAsync(new Guid(userId), cancellationToken);
             }
 
             logger.LogWarning("ReThinkMarket Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@UserId} {@UserName} {@Request}",
