@@ -1,14 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Common.Application</PackageId>
-    <Version>0.0.12</Version>
+    <Version>0.0.13</Version>
     <Authors>Sergio Hernandez</Authors>
     <Company>TBD</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
     <PackageReference Include="HotChocolate.AspNetCore.Authorization" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" />
