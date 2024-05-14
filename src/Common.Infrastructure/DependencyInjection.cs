@@ -18,6 +18,8 @@ using Common.Infrastructure.Interceptors;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -31,11 +33,25 @@ public static class DependencyInjection
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
-                options.Authority = configuration.GetValue<string>("AuthorityServer:Authority"); // "https://localhost/Identity";
-                options.TokenValidationParameters.ValidateAudience = configuration.GetValue<bool>("AuthorityServer:ValidateAudience");//false;
-                options.TokenValidationParameters.ValidateIssuer = configuration.GetValue<bool>("AuthorityServer:ValidateIssuer");//true;
-                options.TokenValidationParameters.ValidateIssuerSigningKey = configuration.GetValue<bool>("AuthorityServer:ValidateIssuerSigningKey");//true;
-                options.TokenValidationParameters.ValidIssuer = configuration.GetValue<string>("AuthorityServer:Authority"); //"https://localhost/Identity";
+                var validateSigningKey = configuration.GetValue<bool>("AuthorityServer:ValidateIssuerSigningKey");
+                options.Authority = configuration.GetValue<string>("AuthorityServer:Authority");
+                options.TokenValidationParameters.ValidateAudience = configuration.GetValue<bool>("AuthorityServer:ValidateAudience");
+                options.TokenValidationParameters.ValidateIssuer = configuration.GetValue<bool>("AuthorityServer:ValidateIssuer");
+                options.TokenValidationParameters.ValidateIssuerSigningKey = validateSigningKey;
+                options.TokenValidationParameters.ValidIssuer = configuration.GetValue<string>("AuthorityServer:Authority");
+                if (validateSigningKey)
+                {
+                    //Update this once the AuthorityServer separates the signing key from the certificate
+                    var certificatePath = configuration.GetValue<string>("OpenIddict:Path");
+                    var certificatePassword = configuration.GetValue<string>("OpenIddict:Password");
+
+                    var bytes = File.ReadAllBytes(certificatePath ?? "");
+                    var certificate = new X509Certificate2(
+                        bytes,
+                        certificatePassword);
+                    var signingKey = new X509SecurityKey(certificate);
+                    options.TokenValidationParameters.IssuerSigningKey = signingKey;
+                }
             });
 
         services.AddSingleton(TimeProvider.System);
