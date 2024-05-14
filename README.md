@@ -1,6 +1,6 @@
 ﻿# Common - Clean Architecture
 
-The project was generated using the [Clean.Architecture.Solution.Template](https://github.com/jasontaylordev/Security) version 8.0.0-preview.7.2.
+The project was generated using the [Clean.Architecture.Solution.Template](https://github.com/jasontaylordev/CleanArchitecture) version 8.0.0-preview.7.2.
 
 ## License
 
