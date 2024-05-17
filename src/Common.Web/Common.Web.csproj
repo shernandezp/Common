@@ -11,7 +11,6 @@
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" />
     <PackageReference Include="NSwag.AspNetCore" />
     <PackageReference Include="FluentValidation.AspNetCore" />
-    <PackageReference Include="ZymLabs.NSwag.FluentValidation.AspNetCore" />
   </ItemGroup>
 
   <ItemGroup>
